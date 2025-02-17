@@ -11,6 +11,10 @@ const httpServer = app.listen(8080, () => {
     console.log('Server is running on port 8080');
 });
 
+//middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 const io = new Server(httpServer);
 
 app.engine('handlebars', handlebars.engine());
@@ -23,14 +27,20 @@ app.use('/', viewRouter);
 app.use(express.json());
 app.use(express.static('./src/public'));
 
+const productsArray = [];
 
-io.on('connection', (socket) => {
-    console.log('A user connected');
+io.on("connection", (socket) => {
+    console.log("* * * New User * * *");
 
-    socket.on('message', (msg) => {
-        console.log(msg);
+    socket.emit("productsList", productsArray);
+
+    socket.on("nuevoProducto", (product) => {
+        product.id = productsArray.length + 1;
+        productsArray.push(product);
+        io.emit("productosActualizados", productsArray);
     });
-
 });
 
-const productsArray = [];
+app.get("/", (req, res) => {
+    res.render("index");
+});

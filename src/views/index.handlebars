@@ -1,27 +1,30 @@
-<div>
-    Product Name:
-    <input type="text" id="productId" />
-</div>
-<br>
-<div>
-    Price
-    <input type="text" id="price">
-</div>
-<br>
-<div>
-    Category
-    <input type="text" id="category">
-</div>
-<br>
-<div>
-    Serial
-    <input type="text" id="serial">
-</div>
-<br>
-<div>
-    Description:
-    <input type="text" id="description">
-</div>
-
+<form id="formMain">
+    <div>
+        Product Name:
+        <input type="text" id="productName" />
+    </div>
+    <br>
+    <div>
+        Price
+        <input type="text" id="price">
+    {{!-- </div>
+    <br>
+    <div>
+        Category
+        <input type="text" id="category">
+    </div>
+    <br>
+    <div>
+        Serial
+        <input type="text" id="serial">
+    </div>
+    <br>
+    <div>
+        Description:
+        <input type="text" id="description">
+    </div> --}}
+    <button type="submit" id="send">Send</button>
+</form>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/index.js"></script>
+
