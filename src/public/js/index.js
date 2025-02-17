@@ -27,3 +27,13 @@ btnSend.addEventListener('click', () => {
 
     socket.emit('newProduct', newProduct);
 });
+
+
+socket.on("productosActualizados", (products) => {
+    let html = "";
+    products.forEach(prod => {
+        html += `<li>${prod.id} - ${prod.name} - $${prod.price}</li>`;
+    });
+
+    document.getElementById("listaProductos").innerHTML = html;
+});

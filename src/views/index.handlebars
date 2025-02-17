@@ -26,7 +26,8 @@
     <button type="submit" id="send">Send</button>
 </form>
 <main id='ContainerMain'>
-    
+    <h1>Lista de Productos</h1>
+    {{> realTimeProducts }} <!-- Incrusta el parcial aquí -->
 </main>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/index.js"></script>
