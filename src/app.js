@@ -1,3 +1,4 @@
+import path from 'path';
 import express from 'express';
 import handlebars from 'express-handlebars';
 import __dirname from './utils/utils.js';
@@ -12,9 +13,22 @@ const httpServer = app.listen(8080, () => {
 const socketServer = new Server(httpServer);
 
 app.engine('handlebars', handlebars.engine());
-app.set('view engine', 'handlebars');
 app.set('views', __dirname + '/../views');
+app.set('view engine', 'handlebars');
 
-app.use(express.static(__dirname + '/public'));
+//path publico fue lo que me soluciono el problema
+app.use(express.static(path.join(__dirname, '../public')));
+
 
 app.use('/', viewRouter);
+
+socketServer.on('connection', (socket) => {
+    console.log('A user connected');
+
+    socket.on('message', (msg) => {
+        console.log(msg);
+    });
+
+});
+
+
