@@ -27,3 +27,7 @@ Sigue estos pasos para configurar el proyecto en tu máquina local:
 
    ```bash
    git clone https://github.com/Bermelio/Backend-Entrega-2.git
+
+## Contacto
+Si te parezco util para algun laburito contactame por mi correo > 📩 **Email:** [facundoperalta258@gmail.com](mailto:facundoperalta258@gmail.com)  
+> *Envíame un mensaje y te responderé lo antes posible.*
