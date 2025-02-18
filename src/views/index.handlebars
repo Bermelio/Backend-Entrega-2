@@ -1,32 +1,22 @@
 <form id="formMain">
-    <div>
-        Product Name:
+    <div class="form-group">
+        Product Name
         <input type="text" id="productName" />
     </div>
     <br>
-    <div>
+    <div class="form-group">
         Price
         <input type="text" id="price">
-    {{!-- </div>
+    </div>
     <br>
-    <div>
+    <div class="form-group">
         Category
         <input type="text" id="category">
     </div>
-    <br>
-    <div>
-        Serial
-        <input type="text" id="serial">
-    </div>
-    <br>
-    <div>
-        Description:
-        <input type="text" id="description">
-    </div> --}}
     <button type="submit" id="send">Send</button>
 </form>
 <main id='ContainerMain'>
-    <h1>Lista de Productos</h1>
+    <h2>Lista de Productos</h2>
     {{> realTimeProducts }} <!-- Incrusta el parcial aquí -->
 </main>
 <script src="/socket.io/socket.io.js"></script>
